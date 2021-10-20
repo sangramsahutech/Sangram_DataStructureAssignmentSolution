@@ -3,15 +3,15 @@ package com.greatlearning.assignment.skyscraper.driver;
 import java.util.Scanner;
 import java.util.Stack;
 /*
- * Logic -  1. Get input with all validations from user and store it in floor[]. 
- * 			2. Create two stacks - stack and tempStack. 
- * 			3. The tempStack is used as temporary container to sort the elements in the original stack 
- * 			   while inserting element into it one by one from input floor[] (top of stack to bottom of stack is ordered in decreasing order).
- * 			4.  
- * 			3. While top of stack is equal to current element of floor[] then pop the element from the stack and decrease current element by 1 to 
- * 			   check next smaller floor.
- *        	   
- *        	3. If 
+ *	 Logic -  	1. Get input with all validations from user and store it in floor[]. 
+* 			2. Create two stacks - stack and tempStack. 
+* 			3. The tempStack is used as temporary container to sort the elements in the original stack 
+* 			   while inserting element into it one by one from input floor[] (top of stack to bottom of stack is ordered in decreasing order).
+* 			4. If incoming value is greater than the peek of original stack then push the element otherwise pop element from the original stack and
+* 			   insert into the temp stack and it continues until we pop out the element at peek of stack is greater than the incoming value and 
+* 			   finally push the incoming element into the original stack and push all the elements from temp stack to original stack.
+* 			5. While top of stack is equal to current element of floor[] then pop the element from the stack and decrease current element by 1 to 
+* 			   check next smaller floor.
  */
 public class SkyScraperDriver {
 
@@ -53,6 +53,7 @@ public class SkyScraperDriver {
 		int res = n;
 		Stack<Integer> stack = new Stack<>();
 		Stack<Integer> tmpStack = new Stack<>();
+		System.out.println("The order of construction is as follows");
 		for(int j=0;j<n;j++) {
 			System.out.println("Day: "+day++);
 			if(stack.isEmpty())
@@ -72,6 +73,7 @@ public class SkyScraperDriver {
 				System.out.print(stack.pop()+" ");
 				res--;
 			}
+			System.out.println();
 		}
 	}
 }
