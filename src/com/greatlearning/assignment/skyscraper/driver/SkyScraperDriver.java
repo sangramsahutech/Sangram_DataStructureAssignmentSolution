@@ -11,7 +11,7 @@ import java.util.Stack;
 * 			   insert into the temp stack and it continues until we pop out the element at peek of stack is greater than the incoming value and 
 * 			   finally push the incoming element into the original stack and push all the elements from temp stack to original stack.
 * 			5. While top of stack is equal to current element of floor[] then pop the element from the stack and decrease current element by 1 to 
-* 			   check next smaller floor.
+* 			   check next smaller floor.  
  */
 public class SkyScraperDriver {
 
